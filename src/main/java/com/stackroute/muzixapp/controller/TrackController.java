@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping(value ="api/v1")
 public class TrackController {
 
-        TrackService trackService;
+        private TrackService trackService;
 
         @Autowired
         public TrackController(TrackService trackService) {
@@ -63,7 +63,4 @@ public class TrackController {
         responseEntity=new ResponseEntity<String>("Succesfully deleted",HttpStatus.NO_CONTENT);
         return responseEntity;
     }
-
     }
-
-
