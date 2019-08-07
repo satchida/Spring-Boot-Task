@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class TrackServiceImpl implements TrackService {
 
-       TrackRepository trackRepository;
+       private TrackRepository trackRepository;
 
         @Autowired
         public TrackServiceImpl(TrackRepository trackRepository) {
@@ -34,11 +34,8 @@ public class TrackServiceImpl implements TrackService {
         {
             if(!trackRepository.findById(track.getId()).isPresent())
                 return false;
-
-            // track.setId(id);
             trackRepository.save(track);
             return  true;
-
         }
 
         @Override
@@ -46,5 +43,4 @@ public class TrackServiceImpl implements TrackService {
             trackRepository.deleteById(id);
             return  true;
         }
-
 }
