@@ -52,7 +52,7 @@ public class TrackServiceImplTest {
     }
 
     @Test
-    public void saveTrackTest() throws TrackAlreadyExistsException {
+    public void saveTrack() throws TrackAlreadyExistsException {
         when(trackRepository.save((Track)any())).thenReturn(track);
         Track savedTrack = trackServiceimpl.saveTrack(track);
         Assert.assertEquals(track,savedTrack);
@@ -61,7 +61,7 @@ public class TrackServiceImplTest {
 
 
     @Test
-    public void getAllTrackTest() throws Exception {
+    public void getAllTrack() throws Exception {
         trackRepository.save(track);
         when(trackRepository.findAll()).thenReturn(list);
         List<Track> getlist = trackServiceimpl.getAllTracks();
@@ -70,7 +70,7 @@ public class TrackServiceImplTest {
     }
 
     @Test
-    public  void updateTrackTest() throws  Exception {
+    public  void updateTrack() throws  Exception {
         trackRepository.save(track);
         when(trackRepository.save((Track)any())).thenReturn(track);
         Track updatedTrack = trackServiceimpl.saveTrack(track);
@@ -78,7 +78,7 @@ public class TrackServiceImplTest {
     }
 
     @Test
-    public void deleteTrackTest() throws  Exception {
+    public void deleteTrack() throws  Exception {
      trackRepository.delete(track);
      boolean deletedTrack=trackRepository.existsById(2);
      assertEquals(false,deletedTrack);
