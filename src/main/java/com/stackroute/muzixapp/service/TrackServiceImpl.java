@@ -7,11 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class TrackServiceImpl implements TrackService {
 
-   TrackRepository trackRepository;
+   private TrackRepository trackRepository;
 
     @Autowired
     public TrackServiceImpl(TrackRepository trackRepository) {
@@ -23,7 +22,6 @@ public class TrackServiceImpl implements TrackService {
         Track savedTrack=trackRepository.save(track);
         return savedTrack;
     }
-
 
     @Override
     public List<Track> getAllTracks() {
