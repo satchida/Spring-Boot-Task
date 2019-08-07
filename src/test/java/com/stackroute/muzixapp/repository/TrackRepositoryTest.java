@@ -34,7 +34,7 @@ public class TrackRepositoryTest {
         trackRepository.deleteAll();
     }
     @Test
-    public void testSaveTrack() throws  Exception{
+    public void saveTrack() throws  Exception{
         trackRepository.save(track1);
         System.out.println(track1.getId());
        Track fetchUser = trackRepository.findById(track1.getId()).get();
@@ -42,7 +42,7 @@ public class TrackRepositoryTest {
     }
 
     @Test
-    public  void testGetAllTracks() throws  Exception{
+    public  void getAllTracks() throws  Exception{
 
         Track tracktest = new Track(4,"James","alfred");
         Track tracktest2 = new Track(7,"Gary","carlos");
@@ -53,7 +53,7 @@ public class TrackRepositoryTest {
     }
 
     @Test
-    public void testUpdateComment(){
+    public void updateComment(){
         trackRepository.save(track1);
         track1.setComment("good");
         trackRepository.save(track1);
@@ -62,7 +62,7 @@ public class TrackRepositoryTest {
     }
 
     @Test
-    public void testSaveUserFailure(){
+    public void saveUserFailure(){
         Track testTrack = new Track(34,"Sabyas","Sahu");
         trackRepository.save(track1);
         Track fetchTrack = trackRepository.findById(track1.getId()).get();
