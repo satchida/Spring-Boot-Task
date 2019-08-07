@@ -14,9 +14,7 @@ import java.util.List;
 @RequestMapping(value ="api/v1")
 public class TrackController {
 
-        TrackService trackService;
-
-
+      private TrackService trackService;
 
         @Autowired
         public TrackController(TrackService trackService) {
@@ -35,7 +33,6 @@ public class TrackController {
             responseEntity=new ResponseEntity<String>(e.getMessage(),HttpStatus.CONFLICT);
         }
         return responseEntity;
-
     }
 
     @GetMapping("tracks")
@@ -43,7 +40,6 @@ public class TrackController {
 
         return new ResponseEntity<List<Track>>(trackService.getAllTracks(),HttpStatus.OK);
     }
-
 
     @PutMapping(value = "/track")
     public ResponseEntity<?> updateTrack(@RequestBody Track track)
@@ -69,5 +65,3 @@ public class TrackController {
 
     }
     }
-
-
