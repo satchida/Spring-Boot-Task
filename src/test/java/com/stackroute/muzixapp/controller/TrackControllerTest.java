@@ -70,7 +70,7 @@ public class TrackControllerTest {
     }
 
     @Test
-    public void saveTrackTest() throws Exception {
+    public void saveTrack() throws Exception {
         when(trackService.saveTrack(any())).thenReturn(track);
         mockMvc.perform(post("/api/v1/track")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(track)))
@@ -79,7 +79,7 @@ public class TrackControllerTest {
     }
 
     @Test
-    public void getAllUserTest() throws Exception {
+    public void getAllUser() throws Exception {
         when(trackService.getAllTracks()).thenReturn(list);
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/tracks")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(track)))
@@ -88,7 +88,7 @@ public class TrackControllerTest {
     }
 
     @Test
-    public void updateTrackTest() throws Exception {
+    public void updateTrack() throws Exception {
         when(trackService.updateTrack(any())).thenReturn(true);
         mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/track")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(track)))
@@ -97,7 +97,7 @@ public class TrackControllerTest {
     }
 
     @Test
-    public void deleteTrackTest() throws Exception {
+    public void deleteTrack() throws Exception {
         when(trackService.deleteTrack(anyInt())).thenReturn(true);
         mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/track/2")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(track)))
