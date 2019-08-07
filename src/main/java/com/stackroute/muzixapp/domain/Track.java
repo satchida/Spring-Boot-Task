@@ -8,11 +8,9 @@ public class Track {
 
 
     @Id
-    int id;
-
-    String name;
-
-    String comment;
+    private int id;
+    privateString name;
+    private String comment;
 
     public Track() {
     }
